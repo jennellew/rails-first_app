@@ -4,9 +4,10 @@ FirstApp::Application.routes.draw do
   get "posts" => "posts#index"
   get "posts/new"
   post "posts/create"
-  get "posts/:id" => "posts#show"#, :as => :post
+  get "posts/:id" => "posts#show", :as => :post
   get "posts/:id/edit" => "posts#edit"
   put "posts/:id" => "posts#update"
+  delete "posts/:id" => "posts#destroy"
   
 
   
