@@ -1,13 +1,13 @@
 FirstApp::Application.routes.draw do
   #get "welcome/index"
 
-  get "posts" => "posts#index"
-  get "posts/new"
-  post "posts/create"
-  get "posts/:id" => "posts#show", :as => :post
-  get "posts/:id/edit" => "posts#edit"
-  put "posts/:id" => "posts#update"
-  delete "posts/:id" => "posts#destroy"
+  #get "posts" => "posts#index"
+  #get "posts/new"
+  #post "posts/create"
+  #get "posts/:id" => "posts#show", :as => :post
+  #get "posts/:id/edit" => "posts#edit"
+  #put "posts/:id" => "posts#update"
+  #delete "posts/:id" => "posts#destroy"
   
 
   
@@ -63,7 +63,9 @@ FirstApp::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
 
-  #resources :posts
+  resources :posts do
+    resources :comments
+  end
 
   # See how all your routes lay out with "rake routes"
 
